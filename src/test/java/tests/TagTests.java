@@ -7,14 +7,14 @@ public class TagTests {
     @Test
     @Tag("SMOKE")
     @DisplayName("SMOKE  TEST")
-    void testWithTagSmoke(){
+    void testWithTagSmoke() {
         System.out.println("==============SMOKE TEST=================");
     }
 
     @Test
     @Tag("WEB")
     @DisplayName("WEB  TEST")
-    void testWithTagWeb(){
+    void testWithTagWeb() {
         System.out.println("==============WEB  TEST=================");
     }
 
@@ -24,7 +24,7 @@ public class TagTests {
             @Tag("SMOKE"),
     })
     @DisplayName("WEB  TEST")
-    void testWithTagsWebAndSmoke(){
+    void testWithTagsWebAndSmoke() {
         System.out.println("==============WEB and  SMOKE=================");
     }
 

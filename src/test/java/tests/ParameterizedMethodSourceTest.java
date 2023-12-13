@@ -2,7 +2,6 @@ package tests;
 
 import data.Language;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -16,10 +15,10 @@ import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selenide.*;
 
 @DisplayName("Test popup")
-public class ParameterizedMetodSorseTest extends TestBase {
+public class ParameterizedMethodSourceTest extends TestBase {
 
 
-    static Stream<Arguments> wikipediaShoudCorrectFuterButtonCheckWithEnamAndList() {
+    static Stream<Arguments> wikipediaShouldCorrectFooterButtonCheckWithEnumAndListTest() {
         return Stream.of(
                 Arguments.of(Language.EN, List.of(
                         "Privacy policy", "About Wikipedia", "Disclaimers", "Contact Wikipedia", "Code of Conduct",
@@ -32,7 +31,7 @@ public class ParameterizedMetodSorseTest extends TestBase {
 
     @MethodSource
     @ParameterizedTest
-    void wikipediaShoudCorrectFuterButtonCheckWithEnamAndList(Language language, List<String> expectedButtons) {
+    void wikipediaShouldCorrectFooterButtonCheckWithEnumAndListTest(Language language, List<String> expectedButtons) {
         open("https://www.wikipedia.org/");
         $(byAttribute("lang", language.name())).click();
         $$("#footer-places a").filter(visible).shouldHave((texts(expectedButtons)));
